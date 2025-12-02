@@ -12,7 +12,6 @@ function Header() {
 
   return (
     <header className="home-header">
-      {/* Гамбургер-меню */}
       <div
         className="menu-icon"
         role="button"
@@ -24,10 +23,6 @@ function Header() {
         <span></span>
       </div>
 
-      {/* Название сайта */}
-      <div style={{ fontWeight: 700 }}>SportNews</div>
-
-      {/* Кнопки Вход/Регистрация */}
       <div style={{ display: "flex", gap: "8px", marginLeft: "-20px" }}>
         <button className="header-btn" onClick={() => navigate("/login")}>
           Вход
