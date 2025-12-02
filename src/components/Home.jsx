@@ -47,18 +47,15 @@ export default function Home() {
     };
   }, []);
 
-  // добавляем категорию к каждой новости
   const newsWithCategory = newsList.map((news) => {
     const cat = categories.find((c) => c.id === news.categoryId);
     return { ...news, categoryName: cat ? cat.name : "Без категории" };
   });
 
-  // фильтрация по категории
   let displayedNews = categoryId
     ? newsWithCategory.filter((news) => String(news.categoryId) === categoryId)
     : newsWithCategory;
 
-  // фильтрация по поиску
   displayedNews = displayedNews.filter(
     (news) =>
       news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -79,7 +76,6 @@ export default function Home() {
             : "Все новости"}
         </div>
 
-        {/* Поле поиска */}
         <input
           type="text"
           placeholder="Поиск новостей..."
